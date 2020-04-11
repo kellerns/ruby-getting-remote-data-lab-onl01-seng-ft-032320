@@ -10,7 +10,7 @@ class GetRequester
   end
 
 
-  def get_programs
+  def get_response_body
     uri = URI.parse(@url)
     response = Net::HTTP.get_response(uri)
     response.body
@@ -18,5 +18,5 @@ class GetRequester
 
 end
 
-programs = GetRequester.new.get_programs
+programs = GetRequester.new.get_response_body
 puts programs
