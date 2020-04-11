@@ -3,11 +3,15 @@ require 'open-uri'
 require 'json'
 
 class GetRequester
+  attr_accessor :url
 
-  URL = "http://data.cityofnewyork.us/resource/uvks-tn5n.json"
+  def initialize(string_url)
+    @url = string_url
+  end
+
 
   def get_programs
-    uri = URI.parse(URL)
+    uri = URI.parse(@url)
     response = Net::HTTP.get_response(uri)
     response.body
   end
