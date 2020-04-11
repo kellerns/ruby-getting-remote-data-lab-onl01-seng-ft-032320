@@ -2,7 +2,7 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 
-class GetPrograms
+class GetRequester
 
   URL = "http://data.cityofnewyork.us/resource/uvks-tn5n.json"
 
@@ -14,5 +14,5 @@ class GetPrograms
 
 end
 
-programs = GetPrograms.new.get_programs
+programs = GetRequester.new.get_programs
 puts programs
